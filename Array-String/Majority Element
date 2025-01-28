@@ -1,0 +1,22 @@
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+
+        if len(nums) == 0:
+            return 
+        
+        maj = int(len(nums)/2) + 1
+        d = {}
+        for num in nums:
+            if num not in d:
+                d[num] = 1
+            else:
+                d[num] += 1
+        
+        for key, val in d.items():
+            if val >= maj:
+                return key
+        
