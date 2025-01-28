@@ -9,17 +9,17 @@ The popular LeetCode Top Interview 150 Problem set, as shown here: https://leetc
 * Majority Element
 
 ### Two Pointers
-Valid Palindrome
+* Valid Palindrome
 
 ### Sliding Window
 
 ### Matrix
 
 ### Hashmap
-Happy Number
+* Happy Number
 
 ### Intervals
-Minimum Number of Arrows to Burst Balloons
+* Minimum Number of Arrows to Burst Balloons
 
 ### Stack
 
