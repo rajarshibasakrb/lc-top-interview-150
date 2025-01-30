@@ -1,0 +1,31 @@
+class Solution(object):
+    def wordBreak(self, s, wordDict):
+        """
+        :type s: str
+        :type wordDict: List[str]
+        :rtype: bool
+        """
+        
+        # Initialize an array of boolean values for each character
+        # in the string plus an extra one 
+        dp = [False] * (len(s) + 1)
+        # Set the last boolean value to be true
+        dp[len(s)] = True
+
+        # Iterate thorugh every character in the s backwards:
+        for i in range(len(s) - 1, -1, -1):
+            # Iterate through every word in the wordDict:
+            for word in wordDict:
+                # First check if the word can be even contained in the string
+                # from the given position
+                if i + len(word) <= len(s):
+                    # Then check if the word is present in the string
+                    if s[i: i + len(word)] == word:
+                        # Update the boolean value in the dp array
+                        dp[i] = dp[i + len(word)]
+                # Since we have found one word that is matching,
+                # don't check for other words
+                if dp[i] == True:
+                    break
+        
+        return dp[0]
