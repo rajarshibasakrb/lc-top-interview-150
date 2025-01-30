@@ -52,6 +52,7 @@ The popular LeetCode Top Interview 150 Problem set, as shown here: https://leetc
 ### Math
 
 ### 1D DP
+* Word Break
 
 ### Multidimensional DP
 
