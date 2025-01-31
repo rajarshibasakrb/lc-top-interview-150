@@ -1,0 +1,32 @@
+class Solution(object):
+    def wordPattern(self, pattern, s):
+        """
+        :type pattern: str
+        :type s: str
+        :rtype: bool
+        """
+        
+        list_string = s.split()
+        print(list_string)
+
+        list_pattern = list(pattern)
+        print(list_pattern)
+
+        d = {}
+
+        if len(list_string) != len(list_pattern):
+            return False
+
+        for letter, word in zip(list_pattern, list_string):
+            if letter not in d:
+                if word not in d.values():
+                    d[letter] = word
+                else:
+                    return False
+            else:
+                if word == d[letter]:
+                    continue
+                else:
+                    return False
+        
+        return True
