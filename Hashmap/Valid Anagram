@@ -1,0 +1,35 @@
+class Solution(object):
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        if len(s) != len(t):
+            return False
+
+        if len(s) == 0 and len(t) == 0:
+            return True
+
+        if len(s) == 1 and len(t) == 1:
+            if s == t:
+                return True
+            else:
+                return False
+
+        def get_char_freq(st):
+            d = {}
+            for char in st:
+                if char not in d:
+                    d[char] = 1
+                else:
+                    d[char] += 1
+            return d
+
+        freq_s = get_char_freq(s)
+        freq_t = get_char_freq(t)
+
+        if freq_s == freq_t:
+            return True
+
+        return False         
