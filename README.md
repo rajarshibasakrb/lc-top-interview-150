@@ -7,6 +7,7 @@ The popular LeetCode Top Interview 150 Problem set, as shown here: https://leetc
 ### Array/String
 * Remove Element
 * Majority Element
+* Rotate Array
 
 ### Two Pointers
 * Valid Palindrome
