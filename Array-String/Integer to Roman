@@ -1,0 +1,64 @@
+# Sub-optimal Solution
+class Solution(object):
+    def intToRoman(self, num):
+        """
+        :type num: int
+        :rtype: str
+        """
+
+        # Convert number to digits
+        rem = 1
+        digits = []
+        mult = 0
+        act_num = 0
+        more_than_5 = 0
+        result = ""
+        char = ""
+
+        int_to_rom_d = {1: "I",
+                        5: "V",
+                        10: "X",
+                        50: "L",
+                        100: "C",
+                        500: "D",
+                        1000: "M"}
+
+        sub_forms_d = {4: "VI",
+                       9: "XI",
+                       40: "LX",
+                       90: "CX",
+                       400: "DC",
+                       900: "MC"}
+
+        if num in int_to_rom_d:
+            return int_to_rom_d[num]
+        if num in sub_forms_d:
+            result = sub_forms_d[num]
+            return result[::-1]
+
+        while (num != 0):
+            rem = num % 10
+            print("Remainder: ", rem )
+            num = num // 10
+            print("Remaining number: ", num)
+            act_num = rem * int(math.pow(10, mult))
+            digits.append(act_num)
+
+            if (rem == 4 or rem == 9):
+                result = result + sub_forms_d[act_num]
+            elif (rem > 0 and rem < 4):
+                for i in range(rem):
+                    result = result + int_to_rom_d[int(math.pow(10, mult))]
+            elif (rem > 4 and rem < 9):
+                more_than_5 = rem - 5
+                if more_than_5 == 0:
+                    result = result + int_to_rom_d[act_num]
+                else:
+                    for i in range(more_than_5):
+                        result = result + int_to_rom_d[int(math.pow(10, mult))]
+                    result = result + int_to_rom_d[int(5 * math.pow(10, mult))]
+            mult += 1 
+
+        result = result[::-1]
+
+        return result
