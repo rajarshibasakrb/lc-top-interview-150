@@ -48,6 +48,7 @@ The popular LeetCode Top Interview 150 Problem set, as shown here: https://leetc
 ### Kadane's Algorithm
 
 ### Binary Search
+* Search Insert Position
 
 ### Heap
 
