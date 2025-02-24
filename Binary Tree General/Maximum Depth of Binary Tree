@@ -1,0 +1,62 @@
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution(object):
+    def maxDepth(self, root):
+        """
+        :type root: Optional[TreeNode]
+        :rtype: int
+        """
+
+        '''
+        # Recursive Solution
+        if not root:
+            return 0
+        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+        '''
+
+        '''
+        # Breadth-first search solution
+        if not root:
+            return 0
+        # Initialize the level
+        level = 0
+        # Declare and intialize a deque
+        q = deque([root])
+        # While the deque q is not empty
+        while q:
+            # Iterate through the deque
+            for i in range(len(q)):
+                # Remove and return an element from the left end of the deque.
+                node = q.popleft()
+
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+            level += 1
+
+        return level
+        '''
+
+        # Depth First Search Iterative Solution
+        # Initialize a stack with rootnode and depth = 1
+        stack = [[root, 1]]
+        # Initialize a variable to store the depth
+        result = 0
+        # Iterate while the stack is not empty
+        while stack:
+            # Pop the left most item from the stack
+            node, depth = stack.pop()
+            # If the node is not null
+            if node:
+                # Update the result variable 
+                result = max(result, depth)
+                # Append the left and right node of the previous node with depth+1
+                stack.append([node.left, depth + 1])
+                stack.append([node.right, depth + 1])
+
+        return result
