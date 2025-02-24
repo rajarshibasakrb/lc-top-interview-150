@@ -65,4 +65,6 @@ The popular LeetCode Top Interview 150 Problem set, as shown here: https://leetc
 ### Multidimensional DP
 * Triangle
 
-###
+### Caveat
+* Binary Tree General
+  * The maximum depth of a binary tree solution has three alternatives: Recursion, Breadth-First Search using a queue (deque), and Depth-First Search using a stack.
