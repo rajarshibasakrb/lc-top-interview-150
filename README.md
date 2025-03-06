@@ -32,6 +32,7 @@ The popular LeetCode Top Interview 150 Problem set, as shown here: https://leetc
 ### Binary Tree General
 * Maximum Depth of Binary Tree
 * Same Tree
+* Invert Binary Tree
 
 ### Binary Tree BFS
 
