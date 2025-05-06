@@ -9,6 +9,7 @@ The popular LeetCode Top Interview 150 Problem set, as shown here: https://leetc
 * Majority Element
 * Rotate Array
 * Integer to Roman
+* H-Index
 
 ### Two Pointers
 * Valid Palindrome
